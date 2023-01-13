@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+
+<body>
+  <script type="text/javascript">
+    function Continue() {
+      prompt("Select Level", "Level 1");
+      var lvl;
+      switch (1) {
+        case 1:
+          lvl = "Level 1";
+          break;
+        case 2:
+          lvl = "Level 2";
+          break;
+        case 3:
+          lvl = "Level 3";
+          break;
+        case 4:
+          lvl = "Level 4";
+          break;
+      }
+    }
+    function NewGame() {
+      confirm("Are you sure for New Game");
+    }
+    function Quit() {
+      alert("You want to Quit?");
+    }
+  </script>
+  <h2>GAME OVER</h2>
+  <button onclick="Continue()">Continue</button> <br><br>
+  <button onclick="NewGame()">New Game</button> <br><br>
+  <button onclick="Quit()">Quit</button> <br>
+</body>
+
+</html>

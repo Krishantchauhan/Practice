@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  font-family: monospace;
+}
+
+.product {
+  background: pink;
+  width: 100%;
+  height: 40vh;
+  text-align: center;
+  font-size: 6rem;
+  padding-top: 8.4rem;
+  color: white;
+}
+
+ul>li {
+  display: inline-block;
+}
+
+.nav {
+  z-index: 10;
+  background: black;
+  height: 8vh;
+  padding: 1rem;
+  padding-bottom: 0rem;
+}
+
+li>a {
+  text-decoration: none;
+  color: white;
+  margin: 1rem;
+  font-size: 1.5em;
+}
+.nav {
+  position: sticky;
+  width: 100%;
+  top: 0;
+}

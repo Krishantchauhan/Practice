@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <p>hello Krishant</p>
+    <h1><span>Krishant </span>one</h1>
+    <h1 class="h">heading one Krishant</h1>
+    <h1>Krishant</h1>
+
+    <input class="one" type="text" /><br />
+    <input class="two" type="text" /><br />
+    <button onclick="fun1()">Submit</button>
+
+    <button class="b">color</button>
+  </body>
+  <script>
+    function fun() {
+      a = document.getElementsByClassName("one")[0].value;
+      b = document.getElementsByClassName("two")[0].value;
+      console.log(a + "" + b);
+    }
+
+    d = new Date();
+    document.write(
+      d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear()
+    );
+
+    function fun1() {
+      let a = document.getElementsByTagName("input");
+      var check = "";
+      for (var i = 0; i < a.length; i++) {
+        if (a[i].value == "") {
+          check += a[i] + " ";
+        }
+      }
+      if (check != "") alert("Please fill the form");
+    }
+
+    var a = $("p");
+    var c = {
+      color: "blue",
+      border: "1px solid green",
+      padding: "5px",
+    };
+    // a.css(c);
+
+    // var b = $("span");
+    // b.css("color", "green").text();
+
+    // var h = $("h1");
+    // h.fadeOut(5000);
+    // h.fadeIn(300);
+
+    // var a = $(".b").click(function () {
+    //   $(".h").css("background", "red");
+    // });
+
+    // $(".b").click(function () {
+    //   $(".h").css("color", "cyan");
+    // });
+
+    // a.dblclick(function () {
+    //   a.toggleClass("c");
+    // });
+
+    var p = $("p:first");
+    p.dblclick(function () {
+      p.toggleClass("dbl");
+    });
+  </script>
+</html>

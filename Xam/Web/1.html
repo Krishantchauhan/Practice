@@ -1,0 +1,56 @@
+<html>
+
+<head>
+  <title>Home</title>
+</head>
+<style media="screen">
+  th{
+    padding: 8px;
+  }
+  td{
+    padding: 8px;
+  }
+</style>
+<body>
+
+<label for="">First NUmber :-</label>
+<input type="number" name="" value="" id="first" ><br><br>
+
+<label for="">Second Number</label>
+<input type="number" name="" id="sec" value=""><br><br>
+
+<label for="">Output:-</label>
+<input type="number" name="" id="op" value="">
+
+<input type="button" name="" onclick="mul()" value="MUltiplay"><br><br><br>
+
+</body>
+<script type="text/javascript">
+var c =document.getElementById("op");
+var a = document.getElementById("first");
+var b = document.getElementById("sec");
+
+function mul(){
+  c.value= parseInt(a.value)*parseInt(b.value);
+
+}
+
+var arr = ['A','B','C','D','E','F'];
+// Don't do this!
+// var nam = prompt("Enter a name to insert in an array ");
+// arr.push(nam);
+arr.splice(1,1);
+for (letter of arr) {
+  document.writeln(letter);
+}
+
+var obj={a:"one",b:["a","b","c"],c:24};
+var objop=obj.a;
+document.write(objop);
+
+var name="Krishant chauhan"
+document.write("\t"+name.charAt(1));
+var num1=10.2321;
+</script>
+
+</html>
