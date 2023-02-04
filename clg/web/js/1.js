@@ -6,3 +6,6 @@ var sum = a+b
 
 alert("Your Sum is "+sum)
 console.log("Your Sum is "+sum);
+
+
+//how to find factorial of a number?
