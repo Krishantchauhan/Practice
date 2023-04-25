@@ -1,0 +1,296 @@
+Name: - Bhupender Singh Roll No: - 17 Section: - D
+Problem Statement 1 - Akshay scored 45, 67, 98 and 70 marks in 4 subjects. Write a java code to calculate his Average marks and percentage using Command line Arguments.
+public class q1{
+public static void main(String args[]){
+int sum=0;
+for(int i=0;i<args.length;i++){ sum+=Integer.parseInt(args[i]);
+} }
+}
+double percent=sum/args.length; System.out.println("Percentage of four subjects is "+percent);
+Solution
+Output
+ 
+Name: - Bhupender Singh Roll No: - 17 Section: - D Problem Statement 2 - Akshay wants to calculate the area of Square, Rectangle and Circle. Create three different
+methods having same name calculateArea(). Take input from command line.
+Solution
+void calculateArea(int l, int b) { System.out.println("Area of the rectangle is :" + l * b);
+}
+void calculateArea(double r) {
+System.out.println("Area of the circle is :" + 3.14 * r); }
+class Area {
+void calculateArea(int s) {
+System.out.println("Area of the square is :" + s * s); }
+}
+public class q2 {
+} }
+Output
+public static void main(String args[]) {
+int s = Integer.parseInt(args[0]);
+int l = Integer.parseInt(args[1]);
+int b = Integer.parseInt(args[2]);
+double r = Double.parseDouble(args[3]);
+Area a = new Area(); a.calculateArea(s); a.calculateArea(l, b); a.calculateArea(r);
+ 
+Name: - Bhupender Singh Roll No: - 17 Section: - D
+Problem Statement 3 - Write a Java program to compute the sum of even digits in a 5-digit number. Solution
+import java.util.*; public class q3{
+public static void main(String args[]){
+Scanner sc=new Scanner(System.in); System.out.print("Enter a 5-digit number: "); int num=sc.nextInt();
+int sum=0;
+int num2=num; while(num2>0){
+int rem=num2%10; if(rem%2==0){
+sum+=rem; }
+num2/=10; }
+System.out.println("Sum of even digits of "+num+" is "+sum); }
+}
+Output
+ 
+Name: - Bhupender Singh Roll No: - 17 Section: - D
+Problem Statement 4 - Create a Class Student having data members roll no and name and methods are getData() and display().
+class Student{ int rollno;
+String name;
+void getData(int rollno,String name){
+this.rollno=rollno;
+this.name=name; }
+void display(){
+System.out.println("The roll no of Student is "+rollno+" & name is "+name);
+} }
+public class q4{
+public static void main(String args[]){
+Student s=new Student(); s.getData(17,"Bhuppi"); s.display();
+} }
+Solution
+Output
+ 
+Name: - Bhupender Singh Roll No: - 17 Section: - D Problem Statement 5 - Create a Class Student having data members roll no and name and parametrized
+constructor.
+class Student{ int rollno;
+String name; Student(int x,String y){
+Solution
+this.rollno=x;
+this.name=y;
+System.out.println("Roll no & Name is : "+rollno+" "+name);
+} }
+class Q5{
+public static void main(String args[]){
+Student s=new Student(17,"Bhuppi"); }
+}
+Output
+ 
+Name: - Bhupender Singh Roll No: - 17 Section: - D
+Problem Statement 6 - Create a Class “Person” and declare the following variable name (string) and save it in a file called “Person.java”. Create a Class called Employee that will inherit the Person Class , the other data members of Employee Class are AnnualSalary (double), YearOfJoininging (int) and MobileNumber (long). Your Class Should have the necessary constructors and the getter and the setter methods. Do create Class Test having main method to fully check your class definition.
+class Person{ String name;
+}
+class Employee extends Person{
+double AnnualSalary; int YearOfJoining; long MobileNumber; //setter
+public void setAll(String n,double a,int y, long m ){ this.name=n;
+this.AnnualSalary=a;
+this.YearOfJoining=y;
+this.MobileNumber=m; }
+//getter---------- public void getAll(){
+System.out.println(name); System.out.println(AnnualSalary); System.out.println(YearOfJoining); System.out.println(MobileNumber);
+} }
+class Test{
+public static void main(String args[]){
+Employee e=new Employee(); e.setAll("Bhuppi",600000,2023,8449); e.getAll();
+Solution
+
+Name: - Bhupender Singh Roll No: - 17 Section: - D }
+}
+Output
+ 
+Name: - Bhupender Singh Roll No: - 17 Section: - D
+Problem Statement 7 - Create a class named as “Animal” which has methods eat() and sleep(). Create a child class of animal named as “Bird” and override the parent class methods such that define a new method named as fly() in the same class. Create an instance of Animal Class and invoke eat() and sleep(). Create an instance of Bird Class and invoke eat(), sleep() and fly().
+class Animal{ void eat(){
+System.out.println("Animal eats."); }
+void sleep(){ System.out.println("Animal sleeps.");
+} }
+class Bird extends Animal{ void eat(){
+System.out.println("Bird eats."); }
+void sleep(){ System.out.println("Bird sleeps.");
+}
+void fly(){
+System.out.println("Birds can fly."); }
+}
+class Q7{
+public static void main(String args[]){ Animal a=new Animal();
+a.eat();
+a.sleep();
+Bird b=new Bird(); b.eat();
+b.sleep();
+Solution
+
+Name: - Bhupender Singh Roll No: - 17 Section: - D b.fly();
+} }
+Output
+ 
+Name: - Bhupender Singh Roll No: - 17 Section: - D Problem Statement 8 - Write a Java program to calculate the cyclic sum of 5 digits number.
+import java.util.*; public class Q8{
+public static void main(String args[]){ Scanner sc=new Scanner(System.in); System.out.print("Enter any number: "); int num=sc.nextInt();
+int num2=num; int rev=0; while(num2>0){
+int rem1=num2%10; rev=rev*10+rem1; num2/=10;
+}
+int sum=0; while(rev>0){
+int rem2=rev%10; sum+=rem2;
+int num3=rev/10; while(num3>0){
+int rem3=num3%10; sum+=rem3; num3/=10;
+}
+rev/=10; }
+System.out.println("Cyclic sum of "+num+" is "+sum); }
+}
+Solution
+
+Name: - Bhupender Singh Roll No: - 17 Section: - D Output
+ 
+Name: - Bhupender Singh Roll No: - 17 Section: - D
+Problem Statement 9 - Create PIN using three given input numbers. Secure Assets Private Ltd", a small company that deals with digital lockers which can be locked and unlocked using PINs (password). You have been asked to work on the module that is expected to generate password using three input numbers.
+Assumption: The three given input numbers will always consist of three digit i.e. each of them will be in range >=100 and <=999.
+Below are the rules for generating the PIN -
+• The PIN should be made up of 4 digits
+• The unit (ones) position of the PIN should be the tens position of the three input numbers.
+• The hundreds position of the PIN should be the least of the hundred position of the three input numbers. • The tens position of the PIN should be the least of the tens position of the three input numbers.
+• The hundred position of the PIN should be the least of the hundreds position of the three input numbers. • The thousand position of the PIN should be the maximum of all the digits in the three input numbers.
+Solution
+import java.util.*; public class Q9{
+public static void main(String args[]){ System.out.println("Enter three, 3-digit numbers: "); Scanner sc=new Scanner(System.in);
+int num1=sc.nextInt();
+int num2=sc.nextInt();
+int num3=sc.nextInt();
+String pin="";
+int max=0;
+while(num1>0){
+int rem1=num1%10; int rem2=num2%10; int rem3=num3%10;
+if(rem1<rem2&&rem1<rem3){ pin=rem1+pin;
+}else if(rem2<rem1&&rem2<rem3){ pin=rem2+pin;
+
+Name: - Bhupender Singh Roll No: - 17 Section: - D
+} }
+}else{ pin=rem3+pin;
+}
+if(rem1>rem2&&rem1>rem3&&rem1>max){ max=rem1;
+}else if(rem2>rem1&&rem2>rem3&&rem2>max){ max=rem2;
+}else if(rem3>rem1&&rem3>rem2&&rem3>max){ max=rem3;
+} num1/=10; num2/=10; num3/=10;
+}
+pin=max+pin;
+System.out.println("The pin generated is: "+pin);
+Output
+ 
+Name: - Bhupender Singh Roll No: - 17 Section: - D Problem Statement 10 – Write a java program to search an element in an array.
+import java.util.*; public class Search{
+public static void main(String args[]){
+int arr[]={1,2,3,4,5,6,7,8,9}; System.out.print("Enter the element to search: "); Scanner sc=new Scanner(System.in);
+int target=sc.nextInt();
+boolean isFound=false; for(int i=0;i<arr.length;i++){
+if(arr[i]==target){
+isFound=true;
+System.out.println("Targert is present at "+i+" index."); break;
+} }
+if(!isFound){
+System.out.println("Target not found");
+} }
+}
+Solution
+Output
+ 
+Name: - Bhupender Singh Roll No: - 17 Section: - D Problem Statement 11 – Write a java program to delete an element for array.
+import java.util.*; public class Delete{
+public static void main(String args[]){
+int arr[]={1,2,3,4,5,6,7,8,9}; System.out.print("Enter the element to delete: "); Scanner sc=new Scanner(System.in);
+int target=sc.nextInt();
+boolean isFound=false; for(int i=0;i<arr.length;i++){
+if(arr[i]==target){
+isFound=true;
+arr[i]=0;
+System.out.println("Element deleted."); break;
+} }
+if(!isFound){
+System.out.println("Target not found");
+} }
+}
+Solution
+Output
+ 
+Name: - Bhupender Singh Roll No: - 17 Section: - D Problem Statement 12 – Write a java program to calculate the sum of even elements of a jacked array.
+public class Jacked{
+public static void main(String args[]){
+int arr[][]={{1,2,3,4,5}, {6,8,3},
+{9,3,6,2}}; int sum=0;
+for(int i=0;i<arr.length;i++){ for(int j=0;j<arr[i].length;j++){
+if(arr[i][j]%2==0){ sum+=arr[i][j];
+} }
+}
+}
+System.out.println("Sum of even elements of jacked array is :"+sum); }
+Solution
+Output
+ 
+Name: - Bhupender Singh Roll No: - 17 Section: - D Problem Statement 13 – Create a class called calculator with the following methods.
+1. A static method called powering(int n1, int n2):- This should return n1 to the power of n2.
+2. A static method called powerDouble(double n1, int n2):- This should return n1 to the power of n2.
+Invoke both methods and test their functionalities.
+import java.util.*; class Calculator{
+void powering(int n1,int n2){ System.out.println(Math.pow(n1,n2));
+}
+void powerDouble(double n1,int n2){
+System.out.println(Math.pow(n1,n2)); }
+}
+public class Power{
+public static void main(String args[]){ Scanner sc=new Scanner(System.in); System.out.print("Enter n1: ");
+int n1=sc.nextInt(); System.out.print("Enter n2: ");
+int n2=sc.nextInt();
+Calculator c=new Calculator(); c.powering(n1,n2); c.powerDouble(n1,n2);
+} }
+Solution
+Output
+ 
+Name: - Bhupender Singh Roll No: - 17 Section: - D
+Problem Statement 14 –
+Create a class Author with the following information: -
+ Member variable: - Name (String), Email (String) & Gender (Char).
+ Parameterized constructor: - To initialize the variable.
+Create a class Book with the following information: -
+ Member variable: - Name (String), Author (from author class), price (double) & qtyInStock (int).
+ Parameterized constructor: - To initialize the variable.
+ Getter and setters for all member variables.
+In the main () method create an object of book and print all details of book.
+Solution
+class Author {
+private String name; private String email; private char gender;
+public Author(String name, String email, char gender) { this.name = name;
+this.email = email;
+this.gender = gender;
+}
+public String getName() { return name;
+}
+public String getEmail() { return email;
+}
+public char getGender() { return gender;
+} }
+class Book {
+
+Name: - Bhupender Singh Roll No: - 17 Section: - D private String name;
+private Author author; private double price; private int qtyInStock;
+public Book(String name, Author author, double price, int qtyInStock) { this.name = name;
+this.author = author;
+this.price = price;
+this.qtyInStock = qtyInStock; }
+public String getName() { return name;
+}
+public Author getAuthor() { return author;
+}
+public double getPrice() { return price;
+}
+public int getQtyInStock() { return qtyInStock;
+}
+public static void main(String[] args) {
+Author author = new Author("J.K. Rowling", "jkrowling@gmail.com", 'F');
+Book book = new Book("Harry Potter and the Philosopher's Stone", author, 10.99, 1000);
+// Print all details of book
+System.out.println("Book name: " + book.getName());
+
+Name: - Bhupender Singh Roll No: - 17 Section: - D System.out.println("Book author: " + book.getAuthor().getName());
+System.out.println("Book author email: " + book.getAuthor().getEmail()); System.out.println("Book author gender: " + book.getAuthor().getGender()); System.out.println("Book price: " + book.getPrice()); System.out.println("Book quantity in stock: " + book.getQtyInStock());
+} }
+Output
+ 
