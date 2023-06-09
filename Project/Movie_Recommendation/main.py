@@ -29,6 +29,6 @@ def recommend_movies(movie_title, rating_threshold=100, data_file='/Users/krisha
 # recommend_movies('Star Trek: First Contact (1996)')
 # recommend_movies('Bad Boys (1995)')
 # recommend_movies('Terminator 2: Judgment Day (1991)')
-# recommend_movies('Fargo (1996)')
+recommend_movies('Fargo (1996)')
 # recommend_movies('Batman Returns (1992)')
 recommend_movies('Star Wars (1977)')
