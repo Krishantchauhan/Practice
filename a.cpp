@@ -290,3 +290,89 @@ public:
         return mx;
     }
 };
+
+string ans = "";
+int n = s.size();
+
+for (int i = 0; i < n; i++)
+{
+    if (s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u' ||
+        s[i] == 'A' || s[i] == 'E' || s[i] == 'I' || s[i] == 'O' || s[i] == 'U')
+        ans += s[i];
+}
+int ct = 0;
+sort(ans.begin(), ans.end());
+for (int i = 0; i < n; i++)
+{
+    if (s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u' ||
+        s[i] == 'A' || s[i] == 'E' || s[i] == 'I' || s[i] == 'O' || s[i] == 'U')
+        s[i] = ans[ct++];
+}
+return s;
+
+int power(int sum, int expo, int k)
+{
+    int result = pow(b, expo);
+
+    if (sum == result)
+        return 1;
+    if (sum < result)
+        return 0;
+    int a = power(sum - result, expo, b + 1);
+    int b = power(sum, expo, b + 1);
+    return a + b;
+}
+
+vector<string> splitWordsBySeparator(vector<string> &words, char separator)
+{
+
+    vector<string> res;
+    for (auti string &word : words)
+    {
+        string ans = "";
+        for (char ch : word)
+        {
+            if (ch != separator)
+                ans += ch;
+            else
+            {
+                if (!ans.empty())
+                {
+                    res.push_back(ans);
+                    ans.clear();
+                }
+            }
+        }
+        if (!ans.empty())
+        {
+            res.push_back(ans);
+        }
+    }
+    return res;
+}
+
+long long maxArrayValue(vector<int> &nums)
+{
+    int n = nums.size();
+    long long mx = 0;
+    long long high = nums[n - 1];
+
+    for (int i = n - 2; i >= 0; i--)
+    {
+        long long k = nums[i];
+        if (k <= high)
+        {
+            high = high + k;
+            if (high > mx)
+                mx = high;
+        }
+        else
+        {
+            if (high > mx)
+                mx = high;
+            high = k;
+        }
+    }
+
+    return high;
+}
