@@ -11,7 +11,7 @@ ll ct = 0;
 ll low = 0, high = 0;
 ll n, k;
 ll N;
-int flag = 1;
+int flag = 1
 ll sum = 0;
 
 using namespace std;
