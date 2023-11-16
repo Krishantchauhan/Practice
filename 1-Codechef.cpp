@@ -11,137 +11,72 @@ using namespace std;
 using ll = long long;
 
 #define loop(n) for (int i = 0; i < n; i++)
+#define loopj(n) for (int j = 0; j < n; j++)
 #define loop2(n) for (int i = n - 1; i >= 0; i--)
 
-// void A()
-// {
-//     int a, b, c;
-//     cin >> a >> b >> c;
-//     ll prod = a * b;
+const int MOD = 1000000007;
 
-//     ll minut = 24 * 60;
-
-//     ll day = prod / minut;
-//     if (prod % minut != 0)
-//     {
-//         day++;
-//     }
-
-//     if (day <= c)
-//     {
-//         cout << "YES\n";
-//     }
-//     else
-//     {
-//         cout << "NO\n";
-//     }
-// }
-
-// int main()
-// {
-//     int N;
-//     cin >> N;
-
-//     while(N)
-//     {
-//         A();
-//         N--;
-//     }
-
-//     return 0;
-// }
-
-// int find_maximum_FX(int N, int K) {
-//   int maxValue = -1;
-//   int max_X = -1;
-
-//   for (int X = 0; X <= N; X++) {
-//     int value = ((N % K) * (X % K)) % K;
-
-//     if (value > maxValue) {
-//       maxValue = value;
-//       max_X = X;
-//     }
-//   }
-
-//   return max_X;
-// }
-
-// int main() {
-//   int T;
-//   cin >> T;
-
-//   while(T--){
-//     int N, K;
-//     cin >> N >> K;
-
-//     int result = find_maximum_FX(N, K);
-//     cout << result << endl;
-//   }
-
-//   return 0;
-// }
-
-// #include <iostream>
-
-// int find_maximum_FX(int N, int K) {
-//     int max_value = -1;
-//     int max_X = -1;
-//     for (int X = 0; X <= N; X++) {
-//         int value = (X % K) * ((N - X) % K);
-//         if (value > max_value) {
-//             max_value = value;
-//             max_X = X;
-//         }
-//     }
-//     return max_X;
-// }
-
-// int main() {
-//     int T;
-//     std::cin >> T;
-
-//     for (int i = 0; i < T; i++) {
-//         int N, K;
-//         std::cin >> N >> K;
-//         int result = find_maximum_FX(N, K);
-//         std::cout << result << std::endl;
-//     }
-
-//     return 0;
-// }
-
-#include <iostream>
-using namespace std;
-
-void find_maximum_FX(int N, int K)
+void A()
 {
-    int max_value = -1;
-    int mx = -1;
+    int n;
+    cin >> n;
+    string s;
+    cin >> s;
 
-    loop(N/2+1)
+    int ct = 0, sum = 0;
+    loop(n)
     {
-        long long value = (i % K) * ((N - i) % K);
-        if (value > max_value)
+        if (s[i] == '?')
+            ct++;
+        else
+            sum = sum + (s[i] - '0');
+    }
+    if (s[0] == '?')
+    {
+        cout << 1;
+        ct--;
+        while (ct--)
+            cout << 0;
+        cout << "\n";
+    }
+    else
+    {
+        if (ct > 0)
         {
-            max_value = value;
-            mx = i;
+            sum = sum % 9;
+            if (sum == 0)
+            {
+                ct--;
+                while (ct--)
+                    cout << 1;
+                cout << 2 << "\n";
+            }
+            else
+            {
+                while (ct--)
+                    cout << 1;
+                cout << "\n";
+            }
+        }
+        else
+        {
+            if (sum % 9)
+                cout << 0 << "\n";
+            else
+                cout << 1 << "\n";
         }
     }
-
-    cout << mx << "\n";
 }
 
 int main()
 {
-    long long T;
-    cin >> T;
+    int N;
+    cin >> N;
 
-    for (int i = 0; i < T; i++)
+    while (N)
     {
-        long long N, K;
-        cin >> N >> K;
-        find_maximum_FX(N, K);
+        A();
+        N--;
     }
 
     return 0;
