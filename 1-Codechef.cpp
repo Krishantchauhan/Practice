@@ -3,7 +3,8 @@
 #include <algorithm>
 #include <numeric>
 #include <map>
-#include <unordered_map>
+#include <u/NSItemProvider+SWCollaborationMetadata.h>/
+
 #include <queue>
 #include <set>
 
