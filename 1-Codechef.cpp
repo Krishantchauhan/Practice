@@ -11,61 +11,84 @@ using namespace std;
 using ll = long long;
 
 #define loop(n) for (int i = 0; i < n; i++)
-#define loopj(n) for (int j = 0; j < n; j++)
+#define loopj(n) for (int j = 1; j < n; j++)
 #define loop2(n) for (int i = n - 1; i >= 0; i--)
-
-const int MOD = 1000000007;
 
 void A()
 {
-    int n;
+    ll n;
     cin >> n;
-    string s;
-    cin >> s;
+    vector<ll> v(n);
 
-    int ct = 0, sum = 0;
+    ll odd = 0, even = 0;
     loop(n)
     {
-        if (s[i] == '?')
-            ct++;
+        cin >> v[i];
+        if (v[i] % 2 != 0)
+            odd++;
         else
-            sum = sum + (s[i] - '0');
+            even++;
     }
-    if (s[0] == '?')
-    {
-        cout << 1;
-        ct--;
-        while (ct--)
-            cout << 0;
-        cout << "\n";
-    }
+
+    if (odd % 2 != 0 || even % 2 != 0)
+        cout << "-1";
     else
     {
-        if (ct > 0)
+        vector<ll> e, o;
+        vector<ll> ans(n, -1);
+
+        for (auto i : v)
         {
-            sum = sum % 9;
-            if (sum == 0)
-            {
-                ct--;
-                while (ct--)
-                    cout << 1;
-                cout << 2 << "\n";
-            }
+            if (i % 2 != 0)
+                o.push_back(i);
             else
-            {
-                while (ct--)
-                    cout << 1;
-                cout << "\n";
-            }
+                e.push_back(i);
         }
-        else
+
+        sort(e.begin(), e.end());
+        sort(o.begin(), o.end());
+
+        vector<int> o_cnt(odd), e_cnt(even);
+        int k = 0;
+
+        for (auto z : o)
         {
-            if (sum % 9)
-                cout << 0 << "\n";
-            else
-                cout << 1 << "\n";
+            o_cnt[k] = z;
+            k += 2;
+            if (k >= odd)
+                k = 1;
         }
+
+        k = 0;
+
+        for (auto z : e)
+        {
+            e_cnt[k] = z;
+            k += 2;
+            if (k >= even)
+                k = 1;
+        }
+
+        int it = 0;
+
+        for (int z = 0; z < odd; z += 2)
+        {
+            ans[it] = (o_cnt[z] + o_cnt[z + 1]) / 2;
+            ans[it + (n / 2)] = abs(o_cnt[z] - o_cnt[z + 1]) / 2;
+            it++;
+        }
+
+        for (int z = 0; z < even; z += 2)
+        {
+            ans[it] = (e_cnt[z] + e_cnt[z + 1]) / 2;
+            ans[it + (n / 2)] = abs(e_cnt[z] - e_cnt[z + 1]) / 2;
+            it++;
+        }
+
+        for (auto i : ans)
+            cout << i << " ";
     }
+    cout << "\n";
 }
 
 int main()
@@ -78,6 +101,5 @@ int main()
         A();
         N--;
     }
-
     return 0;
 }
